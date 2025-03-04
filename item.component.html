@@ -1,0 +1,66 @@
+<div class="nav">
+    <h1 id="topic">Item Detail Managment</h1>
+</div>
+
+
+<form class="form">
+    <div class="col-md-4">
+        <label class="form-label">ID</label>
+        <input type="number" class="form-control" id="exampleInputEmail1" [(ngModel)]="itemid"
+            [ngModelOptions]="{standalone: true}">
+
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Catogory</label>
+        <input type="text" class="form-control" id="catogory" [(ngModel)]="itemcatogory"
+            [ngModelOptions]="{standalone: true}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="itemname" [ngModelOptions]="{standalone: true}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" [(ngModel)]="itemprice"
+            [ngModelOptions]="{standalone: true}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" [(ngModel)]="itemquantity"
+            [ngModelOptions]="{standalone: true}">
+    </div><br>
+    <div class="btnset">
+        <button type="button" class="btn btn-danger" style="margin-right: 14px; margin-left: 6px;" (click)="clearForm()">Clear</button>
+        <button type="button" class="btn btn-warning" style="margin-right: 14px;" (click)="updateItem()">Update</button>
+        <button type="button" class="btn btn-danger" style="margin-right: 14px;" (click)="deleteItem()">Delete</button>
+        <button type="button" class="btn btn-primary" id="button" (click)="saveItem()">Submit</button>
+    </div>
+
+</form>
+
+<div class="itemtable">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Catogory</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Qantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Item of ItemsArray">
+                <td>{{Item.id}}</td>
+                <td>{{Item.catogory }}</td>
+                <td>{{Item.name }}</td>
+                <td>{{Item.price }}</td>
+                <td>{{Item.quantity }}</td>
+
+        </tbody>
+    </table>
+</div>

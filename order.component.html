@@ -1,0 +1,64 @@
+<div class="nav">
+    <h1 id="topic">Order Detail Managment</h1>
+</div>
+<div>
+    <form class="form">
+        <div class="col-md-4">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" [(ngModel)]="orderid"
+                [ngModelOptions]="{standalone: true}">
+
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">OrderName</label>
+            <input type="text" class="form-control" id="catogory" [(ngModel)]="ordername"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="quantity"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">OrderDetails</label>
+            <input type="text" class="form-control" id="price" [(ngModel)]="orderdetails"
+                [ngModelOptions]="{standalone: true}">
+        </div><br>
+
+        <div class="btnset">
+            <button type="button" class="btn btn-danger" style="margin-right: 14px; margin-left: 6px;"
+                (click)="clearForm()">Clear</button>
+            <button type="button" class="btn btn-warning" style="margin-right: 14px;"
+                (click)="updateOrder()">Update</button>
+            <button type="button" class="btn btn-danger" style="margin-right: 14px;"
+                (click)="deleteOrder()">Delete</button>
+            <button type="button" class="btn btn-primary" id="button" (click)="saveOrder()">Submit</button>
+        </div>
+
+    </form>
+
+    <div class="itemtable">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">OrderName</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">OrderDetails</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Order of OrdersArray">
+                    <td>{{Order.id}}</td>
+                    <td>{{Order.ordername }}</td>
+                    <td>{{Order.quantity }}</td>
+                    <td>{{Order.orderdetails }}</td>
+
+
+            </tbody>
+        </table>
+    </div>
